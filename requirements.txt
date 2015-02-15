@@ -1,8 +1,14 @@
-# visualization requirements
+## Visualization Requirements
+#
+# Core requirements
 numpy>=1.4
 scipy
 matplotlib
+
+# Optional requirements
 xlrd
+xlwt
+requests
 
 # ipython notebook requirements
 ###
