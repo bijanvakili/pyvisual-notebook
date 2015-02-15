@@ -1,0 +1,13 @@
+# visualization requirements
+numpy>=1.4
+scipy
+matplotlib
+
+
+# ipython notebook requirements
+###
+ipython [notebook]
+pyzmq
+jinja2
+tornado
+markupsafe
