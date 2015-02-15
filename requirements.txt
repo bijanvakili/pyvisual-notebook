@@ -2,7 +2,7 @@
 numpy>=1.4
 scipy
 matplotlib
-
+xlrd
 
 # ipython notebook requirements
 ###
