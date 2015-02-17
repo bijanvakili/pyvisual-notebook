@@ -4,6 +4,7 @@
 numpy>=1.4
 scipy
 matplotlib
+Pillow
 
 # Optional requirements
 xlrd
