@@ -10,6 +10,7 @@ Pillow
 xlrd
 xlwt
 requests
+git+https://github.com/stonebig/ipython-sql@8d06d43c115f582368e7b3aa4f4b2dc4a602f882
 
 # ipython notebook requirements
 ###
