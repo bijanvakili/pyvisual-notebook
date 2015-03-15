@@ -1,0 +1,8 @@
+#!/bin/bash
+
+set -e
+
+echo 'Checking for output data in iPython notebook files...'
+git diff --cached --name-only -- '*.ipynb' | xargs python util/nbclean.py check
+
+exit 0

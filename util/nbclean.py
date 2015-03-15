@@ -69,9 +69,9 @@ if __name__ == '__main__':
     )
     subparsers = parser.add_subparsers(dest='command', metavar='command', title=None)
     check_command = subparsers.add_parser('check', help='Check files for output')
-    check_command.add_argument('file', nargs='?', default=None)
+    check_command.add_argument('files', nargs='+', default=None)
     clean_command = subparsers.add_parser('clean', help='Remove output in files')
-    clean_command.add_argument('file', nargs='?', default=None)
+    clean_command.add_argument('files', nargs='+', default=None)
 
     try:
         args = parser.parse_args()
@@ -82,10 +82,11 @@ if __name__ == '__main__':
     check_only = args.command == 'check'
 
     # open the target file
-    if args.file:
+    has_output = False
+    for filename in args.files:
         if check_only:
             try:
-                has_output = (check_notebook(args.file) > 0)
+                has_output |= (check_notebook(filename) > 0)
             except Exception as e:
                 print >>sys.stderr, str(e)
                 sys.exit(2)
@@ -94,13 +95,9 @@ if __name__ == '__main__':
                 sys.exit(1)
         else:
             try:
-                clean_notebook(args.file)
+                clean_notebook(filename)
             except Exception as e:
                 print >>sys.stderr, str(e)
                 sys.exit(2)
-    else:
-        # TODO implement directory walk
-        print >>sys.stderr, 'Directory traversal not implemented yet'
-        sys.exit(4)
 
     sys.exit(0)
