@@ -19,3 +19,6 @@ pyzmq
 jinja2
 tornado
 markupsafe
+
+# requires geos (installed via brew)
+basemap
